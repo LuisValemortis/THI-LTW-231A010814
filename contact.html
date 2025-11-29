@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liên Hệ</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+    <header class="product-header">
+        <div class="container header-content">
+            <h1 class="logo-product">WEB - 231A010814</h1>
+            <nav class="product-nav">
+                <button class="hamburger-menu" aria-label="Toggle navigation">&#9776;</button> 
+                <ul class="nav-list">
+                    <li><a href="index.html">Trang chủ</a></li>
+                    <li><a href="bai01.html">Bài tập 01</a></li>
+                    <li><a href="bai02.html">Bài tập 02</a></li>
+                    <li><a href="bai03.html">Bài tập 03 (Music)</a></li>
+                    <li><a href="about.html">Trang About</a></li>
+                    <li><a href="contact.html">Liên hệ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="contact-section">
+            <h2 class="section-title">📧 Gửi Lời Nhắn Đến Tôi</h2>
+            <form id="contactForm" class="contact-form">
+                <div class="form-group">
+                    <label for="name">Họ Tên:</label>
+                    <input type="text" id="name" name="name" required>
+                    <div class="error-message" id="nameError"></div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                    <div class="error-message" id="emailError"></div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Nội Dung:</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                    <div class="error-message" id="messageError"></div>
+                </div>
+                
+                <button type="submit" class="cta-button">Gửi</button>
+            </form>
+            <div id="formConfirmation" class="message success" style="display: none;"></div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <p>&copy; <span id="currentYear">2025</span> Bản quyền thuộc về **Đỗ Đình Phi**. All Rights Reserved. | <a href="hosting_guide.txt" target="_blank" class="footer-link">Hướng dẫn Hosting</a></p>
+            <div class="social-links">
+                <a href="#"><img src="images/facebook.svg" alt="Facebook Icon" width="24"></a>
+                <a href="#"><img src="images/linkedin.svg" alt="LinkedIn Icon" width="24"></a>
+            </div>
+        </div>
+    </footer>
+    <script src="js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            initializeContactForm();
+            updateFooterYear();
+        });
+    </script>
+</body>
+</html>
