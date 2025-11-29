@@ -1,0 +1,19 @@
+Hướng dẫn Hosting Trang Web Cá Nhân
+===================================
+
+1. Chuẩn bị:
+- Đảm bảo toàn bộ mã nguồn (HTML, CSS, JS, thư mục images/audio) đã hoàn chỉnh và nằm trong một thư mục gốc.
+
+2. Triển khai miễn phí (Netlify/Vercel):
+- Tạo tài khoản miễn phí trên Netlify hoặc Vercel.
+- Liên kết với kho lưu trữ Git (GitHub, GitLab, Bitbucket) của bạn.
+- Chọn thư mục gốc của dự án.
+- Thiết lập:
+  - Build command: Không cần (đối với dự án HTML/CSS/JS thuần).
+  - Publish directory: Thư mục gốc (ví dụ: .).
+- Triển khai (Deploy).
+- Netlify/Vercel sẽ cung cấp một URL miễn phí (ví dụ: https://ten-cua-ban.netlify.app/).
+
+3. Lưu ý:
+- Để sử dụng tính năng Music Player, đảm bảo các tệp âm thanh (.mp3) được đặt đúng đường dẫn trong thư mục audio/ (ví dụ: audio/song1.mp3).
+- Đối với tệp lớn (như video/audio), cân nhắc sử dụng dịch vụ lưu trữ bên ngoài hoặc Netlify Large Media.
