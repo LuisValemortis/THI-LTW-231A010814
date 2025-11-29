@@ -1,23 +1,690 @@
-/* Trong tệp style.css, tìm đoạn @media (max-width: 768px) { ... } */
+:root {
+    --primary-color: #007BFF;
+    --secondary-color: #0056b3;
+    --text-color: #333;
+    --bg-color: #f4f7f6;
+    --white-color: #ffffff;
+    --glass-color: rgba(255, 255, 255, 0.15);
+    --border-radius: 12px;
+    --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
 
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', sans-serif; 
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    scroll-behavior: smooth;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+h1, h2, h3 {
+    color: #222;
+    margin-bottom: 0.5em;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: var(--secondary-color);
+}
+
+/* ------------------------------------------------------------------ */
+/* HEADER & FOOTER (CHUNG CHO TẤT CẢ CÁC BÀI) */
+/* ------------------------------------------------------------------ */
+
+.product-header {
+    position: sticky; 
+    top: 0;
+    z-index: 100;
+    padding: 15px 0;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    background-color: var(--white-color);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.product-header.scrolled {
+    background-color: var(--white-color);
+    box-shadow: var(--shadow);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-product {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--primary-color);
+}
+
+.product-nav {
+    display: flex;
+    align-items: center;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.nav-list a {
+    color: var(--text-color);
+    font-weight: 600;
+    padding: 5px 0;
+    position: relative;
+}
+
+.nav-list a:hover {
+    color: var(--primary-color);
+}
+
+.hamburger-menu {
+    display: none; /* Mặc định ẩn trên desktop */
+    font-size: 1.8rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--text-color);
+}
+
+.main-footer {
+    background-color: var(--text-color);
+    color: var(--bg-color);
+    padding: 20px 0;
+    margin-top: 50px;
+}
+
+.main-footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main-footer a {
+    color: var(--primary-color);
+}
+
+.social-links a {
+    margin-left: 15px;
+    font-size: 1.5rem;
+    color: var(--white-color);
+}
+
+.social-links a:hover {
+    color: var(--primary-color);
+}
+
+/* ------------------------------------------------------------------ */
+/* STYLES CHO index.html (Trang Chủ) */
+/* ------------------------------------------------------------------ */
+
+.section-intro {
+    padding: 50px 0;
+}
+
+.profile-info {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    background-color: var(--white-color);
+    padding: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+}
+
+.avatar {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--primary-color);
+}
+
+.description h3 {
+    color: var(--primary-color);
+}
+
+.section-news {
+    margin-top: 50px;
+}
+
+.section-news iframe {
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+}
+
+
+/* ------------------------------------------------------------------ */
+/* STYLES CHO bai01.html (Product Landing Page) */
+/* ------------------------------------------------------------------ */
+
+.hero-section {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    color: var(--white-color);
+    padding: 80px 0;
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.hero-text h1 {
+    font-size: 3rem;
+    color: var(--white-color);
+    margin-bottom: 0.3em;
+}
+
+.hero-text p {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+}
+
+.btn-primary {
+    background-color: var(--white-color);
+    color: var(--primary-color);
+    padding: 12px 30px;
+    border-radius: 50px;
+    font-weight: 800;
+    text-transform: uppercase;
+    transition: background-color 0.3s;
+    display: inline-block;
+}
+
+.btn-primary:hover {
+    background-color: #f0f0f0;
+    color: var(--secondary-color);
+}
+
+.hero-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--border-radius);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.features-section, .gallery-section {
+    padding: 50px 0;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 40px;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.feature-item {
+    background-color: var(--white-color);
+    padding: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    text-align: center;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* Animation */
+.feature-item:nth-child(1) { transition-delay: 0.1s; }
+.feature-item:nth-child(2) { transition-delay: 0.2s; }
+.feature-item:nth-child(3) { transition-delay: 0.3s; }
+
+.feature-item.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.feature-icon {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+/* Gallery Styles */
+.gallery-content {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.main-image-container {
+    flex-grow: 1;
+}
+
+.main-image-container img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+}
+
+.thumbnail-container {
+    width: 150px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.thumbnail {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    cursor: pointer;
+    opacity: 0.8;
+    border: 3px solid transparent;
+    transition: opacity 0.3s, border-color 0.3s, transform 0.3s;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.thumbnail:hover, .thumbnail.active {
+    opacity: 1;
+    border-color: var(--primary-color);
+    transform: scale(1.02);
+}
+
+/* ------------------------------------------------------------------ */
+/* STYLES CHO bai02.html (Game Đoán Số) */
+/* ------------------------------------------------------------------ */
+
+.game-section {
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 40px;
+    background-color: var(--white-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    text-align: center;
+}
+
+.game-section h2 {
+    color: var(--primary-color);
+}
+
+.input-area {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+#guessInput {
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    width: 150px;
+    text-align: center;
+}
+
+#checkButton, #resetButton {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: background-color 0.2s;
+}
+
+#checkButton {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+}
+
+#checkButton:hover {
+    background-color: var(--secondary-color);
+}
+
+#resetButton {
+    background-color: #ffc107;
+    color: #333;
+    margin-top: 15px;
+}
+
+#resetButton:hover {
+    background-color: #e0a800;
+}
+
+.message {
+    padding: 15px;
+    margin: 15px 0;
+    border-radius: 8px;
+    font-weight: 600;
+    opacity: 0;
+    animation: fadeIn 0.5s forwards;
+}
+
+@keyframes fadeIn {
+    to { opacity: 1; }
+}
+
+.message.warning {
+    background-color: #fff3cd;
+    color: #856404;
+    border: 1px solid #ffeeba;
+}
+
+.message.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.message.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+/* Confetti effect (Visual for success) */
+#confetti-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1000;
+    display: none;
+}
+
+#confetti-container.active {
+    display: block;
+    /* Cần bổ sung animation/logic tạo confetti bằng JS hoặc CSS */
+}
+
+/* ------------------------------------------------------------------ */
+/* STYLES CHO bai03.html (Music Player) */
+/* ------------------------------------------------------------------ */
+
+.music-player-section {
+    padding: 50px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.music-card {
+    background-color: var(--white-color);
+    padding: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    width: 350px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.song-info {
+    margin-bottom: 20px;
+}
+
+.track-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    /* Hiệu ứng xoay khi đang phát */
+    transition: transform 0.3s;
+}
+
+.music-card:not(.paused) .track-img {
+    animation: spin 8s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.song-info h3 {
+    color: #222;
+    margin-bottom: 5px;
+}
+
+.song-info p {
+    color: #777;
+    font-size: 0.9rem;
+}
+
+.controls button {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: #555;
+    cursor: pointer;
+    margin: 0 10px;
+    transition: color 0.2s, transform 0.2s;
+}
+
+.controls button:hover {
+    color: var(--primary-color);
+    transform: scale(1.1);
+}
+
+#play-pause-btn {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+}
+
+.progress-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+#progress-bar {
+    flex-grow: 1;
+    height: 6px;
+    /* Tùy chỉnh thanh range */
+    -webkit-appearance: none;
+    appearance: none;
+    background: #e0e0e0;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#progress-bar::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: var(--primary-color);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+#current-time, #duration {
+    font-size: 0.8rem;
+    color: #777;
+}
+
+.equalizer-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: 20px;
+    gap: 3px;
+    margin-bottom: 15px;
+}
+
+.bar {
+    width: 4px;
+    background-color: var(--primary-color);
+    border-radius: 2px;
+    animation: none; /* Mặc định không chạy */
+}
+
+/* Animation khi nhạc đang chạy */
+.music-card:not(.paused) .bar {
+    animation: sound 0.8s linear infinite alternate;
+}
+
+.music-card:not(.paused) .bar:nth-child(2) { animation-delay: -0.6s; }
+.music-card:not(.paused) .bar:nth-child(3) { animation-delay: -0.4s; }
+.music-card:not(.paused) .bar:nth-child(4) { animation-delay: -0.2s; }
+
+@keyframes sound {
+    0%   { height: 20%; }
+    100% { height: 100%; }
+}
+
+/* Playlist Styles */
+.playlist-container {
+    width: 350px;
+    background-color: var(--white-color);
+    padding: 20px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+}
+
+.playlist-container h3 {
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    color: var(--secondary-color);
+}
+
+#playlist {
+    list-style: none;
+    text-align: left;
+}
+
+#playlist li {
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: background-color 0.2s;
+    font-size: 0.95rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+#playlist li:hover {
+    background-color: #f0f0f0;
+}
+
+
+/* ------------------------------------------------------------------ */
+/* MEDIA QUERIES (RESPONSIVE DESIGN) */
+/* ------------------------------------------------------------------ */
+
+@media (max-width: 992px) {
+    .hero-grid {
+        grid-template-columns: 1fr;
+    }
+    .hero-image {
+        order: -1;
+    }
+    .hero-text {
+        padding-top: 20px;
+    }
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr); 
+    }
+}
+
+@media (max-width: 768px) {
+    
+    .header-content {
+        padding: 0;
+    }
+    
+    .product-nav {
+        flex-direction: column;
+        align-items: flex-end;
+    }
+    
+    .hamburger-menu {
+        display: block; /* Hiển thị nút hamburger */
+    }
+    
     .nav-list {
-        display: none; /* Quy tắc này ẩn menu mặc định */
+        display: none; /* Ẩn menu mặc định */
         flex-direction: column;
         position: absolute;
-        top: 60px; 
+        top: 60px; /* Điều chỉnh vị trí dưới header */
         right: 20px;
-        background-color: white;
-        min-width: 200px;
+        background-color: var(--white-color);
+        min-width: 180px;
         border-radius: var(--border-radius);
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        box-shadow: var(--shadow);
+        padding: 10px;
+        z-index: 90;
+    }
+
+    /* FIX LỖI THANH ĐIỀU HƯỚNG */
+    .nav-list.active {
+        display: flex; /* HIỂN THỊ MENU KHI CÓ CLASS 'active' */
+    }
+
+    .nav-list li {
+        width: 100%;
+        text-align: right;
+    }
+    .nav-list a {
+        display: block;
+        padding: 8px 15px;
+    }
+
+    /* Bai 01 */
+    .features-grid {
+        grid-template-columns: 1fr; 
+    }
+    .gallery-content {
+        flex-direction: column;
+    }
+    .thumbnail-container {
+        width: 100%;
+        flex-direction: row;
+        justify-content: center;
+        overflow-x: auto;
         padding: 10px 0;
     }
-
-    /* BỔ SUNG: QUY TẮC HIỂN THỊ KHI ĐƯỢC KÍCH HOẠT */
-    .nav-list.active {
-        display: flex; /* Hiển thị menu khi class 'active' được thêm vào */
+    .thumbnail {
+        width: 80px; 
     }
 
-    .hamburger-menu {
-        display: block; /* Đảm bảo nút hamburger được hiển thị */
+    /* index.html */
+    .profile-info {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
     }
+    
+    /* Footer */
+    .main-footer .container {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+}
