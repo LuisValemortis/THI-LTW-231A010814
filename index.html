@@ -6,20 +6,19 @@
     <title>Trang Chủ - [231A010814]</title>
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 <body>
     <header class="product-header">
         <div class="container header-content">
             <h1 class="logo-product">WEB - 231A010814</h1>
             <nav class="product-nav">
-                <button class="hamburger-menu" aria-label="Toggle navigation">&#9776;</button> 
+                <button class="hamburger-menu" aria-label="Toggle navigation">&#9776;</button>
                 <ul class="nav-list">
                     <li><a href="index.html">Trang chủ</a></li>
                     <li><a href="bai01.html">Bài tập 01</a></li>
                     <li><a href="bai02.html">Bài tập 02</a></li>
-                    <li><a href="bai03.html">Bài tập 03 (Music)</a></li> 
-                    <li><a href="about.html">Trang About</a></li>
-                    <li><a href="contact.html">Liên hệ</a></li>
+                    <li><a href="bai03.html">Bài tập 03 (Music)</a></li> <li><a href="contact.html">Liên hệ</a></li>
                 </ul>
             </nav>
         </div>
@@ -50,16 +49,19 @@
 
     <footer class="main-footer">
         <div class="container">
-            <p>&copy; <span id="currentYear">2025</span> Bản quyền thuộc về **Đỗ Đình Phi**. All Rights Reserved. | <a href="hosting_guide.txt" target="_blank" class="footer-link">Hướng dẫn Hosting</a></p> 
+            <p>&copy; <span id="currentYear">2025</span> Bản quyền thuộc về **Đỗ Đình Phi**. All Rights Reserved.</p>
             <div class="social-links">
-                <a href="#"><img src="images/facebook.svg" alt="Facebook Icon" width="24"></a>
-                <a href="#"><img src="images/linkedin.svg" alt="LinkedIn Icon" width="24"></a>
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
             </div>
         </div>
     </footer>
-    <script src="js/main.js"></script> 
+    
+    <script src="js/main.js"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', updateFooterYear);
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('currentYear').textContent = new Date().getFullYear();
+        });
     </script>
 </body>
 </html>
