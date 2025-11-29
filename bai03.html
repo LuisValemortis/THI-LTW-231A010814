@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài Tập 03 - Music Player</title>
+    <link rel="stylesheet" href="css/style.css"> 
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+    
+    <header class="product-header">
+        <div class="container header-content">
+            <h1 class="logo-product">WEB - 231A010814</h1>
+            <nav class="product-nav">
+                <button class="hamburger-menu" aria-label="Toggle navigation">&#9776;</button> 
+                <ul class="nav-list">
+                    <li><a href="index.html">Trang chủ</a></li>
+                    <li><a href="bai01.html">Bài tập 01</a></li>
+                    <li><a href="bai02.html">Bài tập 02</a></li>
+                    <li><a href="bai03.html">Bài tập 03 (Music)</a></li>
+                    <li><a href="about.html">Trang About</a></li>
+                    <li><a href="contact.html">Liên hệ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="music-player-section">
+            <h2 class="section-title">🎶 Trình Phát Nhạc Đơn Giản</h2>
+            
+            <div class="music-card paused">
+                <div class="song-info">
+                    <img id="track-image" src="images/music-placeholder.jpg" alt="Ảnh Bài Hát" class="track-img">
+                    <h3 id="track-title"></h3>
+                    <p id="track-artist"></p>
+                </div>
+
+                <div class="equalizer-container">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+
+                <audio id="audio-player" src="" preload="auto"></audio>
+                
+                <div class="controls">
+                    <button id="shuffle-btn" title="Xáo trộn"><i class="fas fa-random"></i></button>
+                    <button id="prev-btn" title="Bài trước"><i class="fas fa-step-backward"></i></button>
+                    <button id="play-pause-btn" title="Phát/Tạm dừng"><i class="fas fa-play"></i></button>
+                    <button id="next-btn" title="Bài tiếp theo"><i class="fas fa-step-forward"></i></button>
+                    <button id="repeat-btn" title="Lặp lại"><i class="fas fa-redo"></i></button>
+                </div>
+            </div>
+
+            <div class="playlist-container">
+                <h3>Danh Sách Phát</h3>
+                <ul id="playlist"></ul> 
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <p>&copy; <span id="currentYear">2025</span> Bản quyền thuộc về **Đỗ Đình Phi**. All Rights Reserved. | <a href="hosting_guide.txt" target="_blank" class="footer-link">Hướng dẫn Hosting</a></p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Khởi tạo Music Player
+            initializeMusicPlayer(); 
+            // Cập nhật năm ở footer
+            updateFooterYear(); 
+        });
+    </script>
+</body>
+</html>
