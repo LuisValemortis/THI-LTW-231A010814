@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me - Đỗ Đình Phi</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+    <header class="product-header">
+        <div class="container header-content">
+            <h1 class="logo-product">WEB - 231A010814</h1>
+            <nav class="product-nav">
+                <button class="hamburger-menu" aria-label="Toggle navigation">&#9776;</button> 
+                <ul class="nav-list">
+                    <li><a href="index.html">Trang chủ</a></li>
+                    <li><a href="bai01.html">Bài tập 01</a></li>
+                    <li><a href="bai02.html">Bài tập 02</a></li>
+                    <li><a href="bai03.html">Bài tập 03 (Music)</a></li>
+                    <li><a href="about.html">Trang About</a></li>
+                    <li><a href="contact.html">Liên hệ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="about-section">
+            <h2 class="section-title">Về Tôi</h2>
+            <div class="about-content">
+                <div class="profile-card">
+                    <img src="images/avatar.jpg" alt="Ảnh Cá Nhân" class="avatar-about" id="avatar-with-filter"> 
+                    <div class="info-details">
+                        <p><strong>Họ và Tên:</strong> Đỗ Đình Phi</p>
+                        <p><strong>Ngày Sinh:</strong> 01/01/2000</p>
+                    </div>
+                </div>
+
+                <div class="video-embed">
+                    <h3>Video Sở Thích (Lập trình Web)</h3>
+                    <iframe width="100%" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+
+            <hr>
+            
+            <section class="hobbies-section" id="hobbiesSection">
+                <h3 class="section-title">Danh sách Sở Thích Cá Nhân (Click để mô tả)</h3>
+                <ul class="hobby-list">
+                    <li class="hobby-item">Lập trình Web</li>
+                    <li class="hobby-item">Đọc sách khoa học viễn tưởng</li>
+                    <li class="hobby-item">Chơi game chiến thuật</li>
+                </ul>
+            </section>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <p>&copy; <span id="currentYear">2025</span> Bản quyền thuộc về **Đỗ Đình Phi**. All Rights Reserved. | <a href="hosting_guide.txt" target="_blank" class="footer-link">Hướng dẫn Hosting</a></p>
+            <div class="social-links">
+                <a href="#"><img src="images/facebook.svg" alt="Facebook Icon" width="24"></a>
+                <a href="#"><img src="images/linkedin.svg" alt="LinkedIn Icon" width="24"></a>
+            </div>
+        </div>
+    </footer>
+    <script src="js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            initializeAboutPage();
+            updateFooterYear();
+        });
+    </script>
+</body>
+</html>
